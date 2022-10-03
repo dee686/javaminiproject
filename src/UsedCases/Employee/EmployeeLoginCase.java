@@ -1,4 +1,5 @@
 package UsedCases.Employee;
+import Application.SelectOption;
 import Exception.EmployeeComplainException;
 import Bean.Employee;
 import Dao.EmployeeDao;
@@ -20,8 +21,10 @@ public class EmployeeLoginCase {
         try {
             Employee emp=dao.EMPLOYEELogin(Email,Pass);
             System.out.println("Welcome "+emp.getEmpName());
+            SelectOption.EmployeeSelectOption();
         } catch (EmployeeComplainException e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
+            SelectOption.selectOption();
         }
 
     }

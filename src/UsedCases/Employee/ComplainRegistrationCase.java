@@ -1,5 +1,6 @@
 package UsedCases.Employee;
 
+import Application.SelectOption;
 import Bean.Complain;
 import Dao.EmployeeDao;
 import Dao.EmployeeDaoImpl;
@@ -20,5 +21,6 @@ public class ComplainRegistrationCase {
 
         String m= dao.ComplainRegistration(cname,c);
         System.out.println(m);
+        SelectOption.EmployeeSelectOption();
     }
 }

@@ -1,4 +1,5 @@
 package UsedCases.Engineer;
+import Application.SelectOption;
 import Exception.HodException;
 import Bean.Complain;
 import Dao.HodDao;
@@ -18,6 +19,8 @@ public class ComplainViewCase {
             complains.forEach(c -> System.out.println(c));
         } catch (HodException e) {
             System.out.println(e.getMessage());;
+        }finally {
+            SelectOption.EngSelectOption();
         }
     }
 }

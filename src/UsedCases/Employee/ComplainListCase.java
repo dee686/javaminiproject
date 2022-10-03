@@ -1,5 +1,6 @@
 package UsedCases.Employee;
 
+import Application.SelectOption;
 import Bean.Complain;
 import Dao.EmployeeDao;
 import Dao.EmployeeDaoImpl;
@@ -22,6 +23,8 @@ public class ComplainListCase {
 
         } catch (EmployeeComplainException e) {
             System.out.println(e.getMessage());;
+        }finally {
+            SelectOption.EmployeeSelectOption();
         }
     }
 }

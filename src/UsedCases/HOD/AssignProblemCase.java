@@ -1,11 +1,12 @@
 package UsedCases.HOD;
 
+import Application.SelectOption;
 import Dao.HodDao;
 import Dao.HodDaoImpl;
 
 import java.util.Scanner;
 
-public class AssignProblemCase {
+public class AssignProblemCase   {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter The Complain Id Which You Want to Assign");
@@ -18,6 +19,7 @@ public class AssignProblemCase {
 
         String m=dao.AssignProblem(cid,enid);
         System.out.println(m);
+        SelectOption.hodSelectOption();
 
     }
 }

@@ -1,5 +1,6 @@
 package UsedCases.Engineer;
 
+import Application.SelectOption;
 import Bean.EngineerComplainDTO;
 import Dao.EngineerDao;
 import Dao.EngineerDaoImpl;
@@ -25,6 +26,7 @@ public class UpdateStatusCase {
 
         String status=updation.UpdateStatus(c,update);
         System.out.println(status);
+        SelectOption.EngSelectOption();
 
 
     }

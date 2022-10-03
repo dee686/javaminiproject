@@ -1,4 +1,5 @@
 package UsedCases.HOD;
+import Application.SelectOption;
 import Exception.EngineerComplainException;
 import Bean.EngineerComplainDTO;
 import Dao.EngineerDao;
@@ -26,6 +27,8 @@ public class ViewHODComplainCase {
             complains.forEach(c -> System.out.println(c));
         }catch (EngineerComplainException e) {
             System.out.println(e.getMessage());
+        }finally {
+            SelectOption.hodSelectOption();
         }
 
 

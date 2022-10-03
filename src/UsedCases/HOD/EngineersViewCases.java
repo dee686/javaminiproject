@@ -1,4 +1,5 @@
 package UsedCases.HOD;
+import Application.SelectOption;
 import Exception.HodException;
 import Bean.Engineer;
 import Dao.HodDao;
@@ -18,8 +19,11 @@ public class EngineersViewCases {
         try {
             List<Engineer> engineers=dao.EngineerList();
             engineers.forEach(e -> System.out.println(e));
+
         }catch (HodException e) {
             System.out.println(e.getMessage());
+        }finally {
+            SelectOption.hodSelectOption();
         }
 
     }

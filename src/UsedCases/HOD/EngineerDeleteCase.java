@@ -1,5 +1,6 @@
 package UsedCases.HOD;
 
+import Application.SelectOption;
 import Dao.HodDao;
 import Dao.HodDaoImpl;
 
@@ -16,5 +17,6 @@ public class EngineerDeleteCase {
 
         String m=dao.EngDelete(name);
         System.out.println(m);
+        SelectOption.hodSelectOption();
     }
 }

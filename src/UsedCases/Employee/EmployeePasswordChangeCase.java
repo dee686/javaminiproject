@@ -1,5 +1,6 @@
 package UsedCases.Employee;
 
+import Application.SelectOption;
 import Dao.EmployeeDao;
 import Dao.EmployeeDaoImpl;
 
@@ -21,6 +22,7 @@ public class EmployeePasswordChangeCase {
 
         String m= dao.PasswordChange(email,pass);
         System.out.println(m);
+        SelectOption.EmployeeSelectOption();
     }
 
 }

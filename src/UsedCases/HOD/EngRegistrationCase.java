@@ -1,5 +1,6 @@
 package UsedCases.HOD;
 
+import Application.SelectOption;
 import Bean.Engineer;
 import Dao.HodDao;
 import Dao.HodDaoImpl;
@@ -33,6 +34,8 @@ public class EngRegistrationCase {
             System.out.println(m);
         } catch (HodException e) {
             System.out.println(e.getMessage());
+        }finally {
+            SelectOption.hodSelectOption();
         }
 
     }

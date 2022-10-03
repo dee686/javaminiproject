@@ -1,5 +1,6 @@
 package UsedCases.Engineer;
 
+import Application.SelectOption;
 import Bean.Engineer;
 import Dao.EngineerDao;
 import Dao.EngineerDaoImpl;
@@ -25,8 +26,10 @@ public class EngLoginCase {
            Engineer engineer= dao.EngineerLogin(email,password);
 
             System.out.println("Welcome : "+engineer.getEngName());
+            SelectOption.EngSelectOption();
         } catch (EngineerException e) {
             System.out.println(e.getMessage());
+            SelectOption.selectOption();
         }
 
     }

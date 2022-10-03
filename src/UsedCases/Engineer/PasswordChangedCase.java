@@ -1,5 +1,6 @@
 package UsedCases.Engineer;
 
+import Application.SelectOption;
 import Dao.EngineerDao;
 import Dao.EngineerDaoImpl;
 
@@ -23,5 +24,6 @@ public class PasswordChangedCase {
         String message=dao.ChangePassword(email,password);
 
         System.out.println(message);
+        SelectOption.EngSelectOption();
     }
 }

@@ -1,5 +1,6 @@
 package UsedCases.Employee;
 
+import Application.SelectOption;
 import Dao.EmployeeDao;
 import Dao.EmployeeDaoImpl;
 
@@ -27,5 +28,6 @@ public class EmployeeRegisteredCase {
 
         String m= dao.EmployeeRegister(id,name,email,pass);
         System.out.println(m);
+        SelectOption.selectOption();
     }
 }

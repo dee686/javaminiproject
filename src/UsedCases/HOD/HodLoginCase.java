@@ -1,5 +1,6 @@
 package UsedCases.HOD;
 
+import Application.SelectOption;
 import Bean.Hod;
 import Dao.HodDao;
 import Dao.HodDaoImpl;
@@ -22,8 +23,11 @@ public class HodLoginCase {
         Hod hod=dao.HodLogin(email,pass);
         if(hod!=null){
             System.out.println("Welcome Deepak");
+            SelectOption.hodSelectOption();
         }else {
             System.out.println("Email or Password is not correct");
+            SelectOption.selectOption();
         }
+
     }
 }

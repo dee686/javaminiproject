@@ -14,27 +14,30 @@ import java.util.List;
 
 public class HodDaoImpl implements HodDao {
     @Override
-    public Hod HodLogin(String Email, String pass) {
+    public Hod HodLogin(String Email, String pass)throws HodException {
 
         Hod hod=null;
         try (Connection conn= Dbutill.provideConnection()){
-            PreparedStatement ps= conn.prepareStatement("Select * from HOD where HODEmail =? AND HODPassword =?");
+            PreparedStatement ps= conn.prepareStatement("Select * from HOD where HODEmail=? AND HODPassword=? ");
             ps.setString(1,Email);
             ps.setString(2,pass);
             ResultSet rs= ps.executeQuery();
             if (rs.next()){
                 String n= rs.getString("HODName");
+                String a=rs.getString("Address");
                 String e= rs.getString("HODEmail");
                 String p=rs.getString("HODPassword");
-                String a=rs.getString("Address");
+
 
                 hod=new Hod(n,e,p,a);
+            }else {
+                throw new HodException("password incorrect");
             }
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return null;
+        return hod;
     }
 
     @Override

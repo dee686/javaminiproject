@@ -20,15 +20,15 @@ public class EngineerDaoImpl implements EngineerDao{
       Engineer  engineer=null;
 
         try (Connection conn= Dbutill.provideConnection()){
-           PreparedStatement ps= conn.prepareStatement("Select * from Engineer where EnEmail =? AND EnPassword =?");
+           PreparedStatement ps= conn.prepareStatement("Select * from Engineer where ENEmail =? AND ENNPassword =?");
             ps.setString(1,email);
             ps.setString(2, Password);
             ResultSet rs= ps.executeQuery();
             if(rs.next()){
-                int id=rs.getInt("EnId");
-                String n= rs.getString("EnName");
-                String e= rs.getString("EnEmail");
-                String p=rs.getString("EnPassword");
+                int id=rs.getInt("ENId");
+                String n= rs.getString("ENName");
+                String e= rs.getString("ENEmail");
+                String p=rs.getString("ENNPassword");
                 String c=rs.getString("ENCategory");
 
                 engineer =new Engineer(id,n,e,p,c);
@@ -53,14 +53,14 @@ public class EngineerDaoImpl implements EngineerDao{
 
         try (Connection conn= Dbutill.provideConnection()){
 
-            PreparedStatement ps= conn.prepareStatement ("Select * from EngineerComplainDTO where Enid =?");
+            PreparedStatement ps= conn.prepareStatement ("Select * from EngineerComplainDTO where ENid =?");
             ps.setInt(1,engId);
             ResultSet rs=ps.executeQuery();
 
             while (rs.next()){
-                int id=rs.getInt("EnId");
-                String n= rs.getString("EnName");
-                String c= rs.getString("EnCategory");
+                int id=rs.getInt("ENId");
+                String n= rs.getString("ENName");
+                String c= rs.getString("ENCategory");
                 int   cId= rs.getInt("EComplainId");
                 String s= rs.getString("ComplainStatus");
 
@@ -109,7 +109,7 @@ public class EngineerDaoImpl implements EngineerDao{
 
         try (Connection conn= Dbutill.provideConnection()){
 
-            PreparedStatement ps=conn.prepareStatement("UPDATE Engineer set EngPassword =? WHERE EngEmail=?");
+            PreparedStatement ps=conn.prepareStatement("UPDATE Engineer set ENNPassword =? WHERE ENEmail=?");
 
             ps.setString(1,password);
             ps.setString(2,email);

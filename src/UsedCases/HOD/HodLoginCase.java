@@ -4,7 +4,7 @@ import Application.SelectOption;
 import Bean.Hod;
 import Dao.HodDao;
 import Dao.HodDaoImpl;
-
+import Exception.HodException;
 import java.util.Scanner;
 
 public class HodLoginCase {
@@ -20,14 +20,16 @@ public class HodLoginCase {
         String pass=sc.next();
 
         HodDao dao=new HodDaoImpl();
-        Hod hod=dao.HodLogin(email,pass);
-        if(hod!=null){
+
+        try {
+         Hod   hod = dao.HodLogin(email,pass);
             System.out.println("Welcome Deepak");
             SelectOption.hodSelectOption();
-        }else {
-            System.out.println("Email or Password is not correct");
+        } catch (HodException e) {
+            System.out.println(e.getMessage());
             SelectOption.selectOption();
         }
+
 
     }
 }

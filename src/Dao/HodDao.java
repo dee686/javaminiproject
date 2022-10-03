@@ -8,7 +8,7 @@ import Exception.HodException;
 import java.util.List;
 
 public interface HodDao {
-    public Hod HodLogin(String Email, String pass);
+    public Hod HodLogin(String Email, String pass)throws HodException;
     public String EngineerRegister(int id, String name, String email, String pass, String cat)throws HodException;
     public List<Engineer> EngineerList()throws HodException;
     public String EngDelete(String name);
